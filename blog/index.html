@@ -64,8 +64,7 @@
   </div>
 
   <div class="lang-toggle">
-    <button class="lang-btn active" data-filter="all">All</button>
-    <button class="lang-btn" data-filter="en">English</button>
+    <button class="lang-btn active" data-filter="en">English</button>
     <button class="lang-btn" data-filter="ko">한국어</button>
   </div>
 
@@ -95,23 +94,20 @@
   const posts   = document.querySelectorAll('.post-list-item[data-lang]');
   const noMsg   = document.getElementById('no-posts');
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.dataset.filter;
-
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      let visible = 0;
-      posts.forEach(post => {
-        const match = filter === 'all' || post.dataset.lang === filter;
-        post.classList.toggle('hidden', !match);
-        if (match) visible++;
-      });
-
-      noMsg.style.display = visible === 0 ? 'block' : 'none';
+  function applyFilter(filter) {
+    buttons.forEach(b => b.classList.toggle('active', b.dataset.filter === filter));
+    let visible = 0;
+    posts.forEach(post => {
+      const match = post.dataset.lang === filter;
+      post.classList.toggle('hidden', !match);
+      if (match) visible++;
     });
-  });
+    noMsg.style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  buttons.forEach(btn => btn.addEventListener('click', () => applyFilter(btn.dataset.filter)));
+
+  applyFilter('en');
 </script>
 
 </body>
