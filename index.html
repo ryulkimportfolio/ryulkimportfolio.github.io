@@ -3,173 +3,316 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ryul Kim — Quant Researcher</title>
+  <title>🌰 — Quant Researcher</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0d0d0d;
-      --surface: #141414;
-      --border: #222;
-      --text: #e8e8e8;
-      --muted: #666;
-      --accent: #c8ff00;
+      --bg: #fafaf8;
+      --text: #111;
+      --muted: #888;
+      --border: #ddd;
+      --serif: "Playfair Display", Georgia, serif;
+      --body: "Source Serif 4", Georgia, serif;
       --mono: "DM Mono", monospace;
-      --sans: "DM Sans", sans-serif;
     }
 
-    html { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.6; }
-    body { max-width: 860px; margin: 0 auto; padding: 0 24px 80px; }
+    html { background: var(--bg); color: var(--text); font-family: var(--body); font-size: 16px; line-height: 1.6; }
+    body { max-width: 900px; margin: 0 auto; padding: 0 32px 100px; }
+
+    /* ── MASTHEAD ── */
+    .masthead {
+      border-top: 3px solid var(--text);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0 12px;
+      margin-bottom: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .masthead-title {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -.02em;
+      line-height: 1;
+    }
+    .masthead-meta {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: .04em;
+      text-align: right;
+    }
 
     /* ── NAV ── */
     nav {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 28px 0 40px; border-bottom: 1px solid var(--border);
-      margin-bottom: 56px;
+      border-bottom: 3px solid var(--text);
+      display: flex;
+      gap: 0;
+      margin-bottom: 48px;
     }
-    nav .logo { font-family: var(--mono); font-size: 13px; color: var(--muted); letter-spacing: .08em; }
-    nav ul { list-style: none; display: flex; gap: 32px; }
-    nav ul a { font-family: var(--mono); font-size: 12px; color: var(--muted); text-decoration: none; letter-spacing: .06em; text-transform: uppercase; transition: color .15s; }
-    nav ul a:hover { color: var(--text); }
+    nav a {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      padding: 8px 20px 8px 0;
+      margin-right: 20px;
+      border-right: 1px solid var(--border);
+      transition: opacity .15s;
+    }
+    nav a:last-child { border-right: none; }
+    nav a:hover { opacity: .5; }
 
     /* ── HERO ── */
-    .hero { margin-bottom: 56px; }
-    .hero-label { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 16px; }
-    .hero h1 { font-family: var(--mono); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 400; line-height: 1.1; letter-spacing: -.02em; margin-bottom: 12px; }
-    .hero-sub { font-family: var(--sans); font-size: 15px; color: var(--muted); max-width: 480px; }
-
-    /* ── STATS BAR ── */
-    .stats {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      border: 1px solid var(--border); margin-bottom: 64px;
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 48px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 48px;
+      margin-bottom: 48px;
     }
-    .stat { padding: 20px 24px; border-right: 1px solid var(--border); }
-    .stat:last-child { border-right: none; }
-    .stat-val { font-family: var(--mono); font-size: 1.6rem; font-weight: 500; color: var(--accent); }
-    .stat-lbl { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin-top: 4px; }
+    .hero-left { border-right: 1px solid var(--border); padding-right: 48px; }
+    .hero-kicker {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .hero-headline {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -.02em;
+      margin-bottom: 20px;
+    }
+    .hero-body {
+      font-family: var(--body);
+      font-size: 15px;
+      color: #333;
+      line-height: 1.7;
+      font-style: italic;
+    }
+    .hero-right { display: flex; flex-direction: column; justify-content: space-between; }
+    .hero-right-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
 
-    /* ── SECTION HEADER ── */
-    .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
-    .section-header h2 { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-    .section-header::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+    /* ── STATS ── */
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 32px; }
+    .stat-val {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-lbl {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── SECTION RULE ── */
+    .section-rule {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      border-top: 3px solid var(--text);
+      padding-top: 10px;
+    }
+    .section-rule h2 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .section-rule::after { content: ""; flex: 1; height: 1px; background: var(--border); }
 
     /* ── PROJECTS ── */
-    .projects { margin-bottom: 64px; }
-    .project {
-      display: grid; grid-template-columns: 3ch 1fr;
-      gap: 0 24px; padding: 28px 0; border-bottom: 1px solid var(--border);
+    .projects { margin-bottom: 56px; }
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
     }
-    .project:first-of-type { border-top: 1px solid var(--border); }
-    .project-num { font-family: var(--mono); font-size: 12px; color: var(--muted); padding-top: 3px; }
-    .project-title { font-family: var(--mono); font-size: 1rem; font-weight: 500; margin-bottom: 8px; }
-    .project-desc { font-family: var(--sans); font-size: 13.5px; color: var(--muted); margin-bottom: 12px; }
+    .project {
+      padding: 24px 24px 24px 0;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+    }
+    .project:nth-child(2n) { padding: 24px 0 24px 24px; border-right: none; }
+    .project:nth-last-child(-n+2) { border-bottom: none; }
+    .project-num {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: .06em;
+      margin-bottom: 8px;
+    }
+    .project-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .project-desc {
+      font-family: var(--body);
+      font-size: 13.5px;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
     .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .tag { font-family: var(--mono); font-size: 10px; letter-spacing: .06em; color: var(--muted); border: 1px solid var(--border); padding: 2px 8px; }
+    .tag {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .06em;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 2px 7px;
+    }
 
     /* ── SKILLS ── */
-    .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; margin-bottom: 64px; }
-    .skill-group h3 { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 20px; }
-    .skill-item { margin-bottom: 14px; }
-    .skill-name { font-family: var(--mono); font-size: 12px; margin-bottom: 5px; display: flex; justify-content: space-between; }
-    .skill-name span { color: var(--muted); }
-    .bar { height: 2px; background: var(--border); }
-    .bar-fill { height: 100%; background: var(--accent); }
+    .skills-section { margin-bottom: 56px; }
+    .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
+    .skill-group h3 {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+    }
+    .skill-item { margin-bottom: 12px; }
+    .skill-name {
+      font-family: var(--body);
+      font-size: 13px;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .skill-name span { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+    .bar { height: 1px; background: var(--border); }
+    .bar-fill { height: 100%; background: var(--text); }
 
-    /* ── CONTACT ── */
-    .contact { display: flex; gap: 32px; flex-wrap: wrap; border-top: 1px solid var(--border); padding-top: 28px; }
-    .contact a { font-family: var(--mono); font-size: 12px; color: var(--muted); text-decoration: none; letter-spacing: .04em; transition: color .15s; }
-    .contact a:hover { color: var(--accent); }
-
-    @media (max-width: 600px) {
-      .stats { grid-template-columns: 1fr 1fr; }
-      .stat:nth-child(2) { border-right: none; }
-      .stat:nth-child(3) { border-right: 1px solid var(--border); }
-      .skills { grid-template-columns: 1fr; }
-      nav ul { gap: 20px; }
+    @media (max-width: 640px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { border-right: none; padding-right: 0; border-bottom: 1px solid var(--border); padding-bottom: 32px; margin-bottom: 32px; }
+      .project-grid { grid-template-columns: 1fr; }
+      .project, .project:nth-child(2n) { padding: 24px 0; border-right: none; border-bottom: 1px solid var(--border); }
+      .project:last-child { border-bottom: none; }
+      .skills { grid-template-columns: 1fr; gap: 32px; }
+      .masthead-title { font-size: 1.6rem; }
     }
   </style>
 </head>
 <body>
 
+<header class="masthead">
+  <div class="masthead-title">🌰</div>
+  <div class="masthead-meta">
+    Quant Researcher · Seoul<br>
+    Est. 2022
+  </div>
+</header>
+
 <nav>
-  <span class="logo">MK / 2026</span>
-  <ul>
-    <li><a href="/">Work</a></li>
-    <li><a href="/blog">Writing</a></li>
-    <li><a href="mailto:ryulkim@icloud.com">Contact</a></li>
-  </ul>
+  <a href="/">Work</a>
+  <a href="/blog">Writing</a>
 </nav>
 
 <section class="hero">
-  <p class="hero-label">Portfolio</p>
-  <h1>🌰</h1>
-  <p class="hero-sub">Quant Researcher · Seoul — building systematic strategies at the intersection of statistics, signal processing, and market microstructure.</p>
-</section>
-
-<section class="stats">
-  <div class="stat">
-    <div class="stat-val">1.87</div>
-    <div class="stat-lbl">Sharpe Ratio</div>
+  <div class="hero-left">
+    <p class="hero-kicker">Portfolio</p>
+    <h1 class="hero-headline">Systematic<br>Strategies<br>& Research</h1>
+    <p class="hero-body">Building quantitative investment strategies at the intersection of statistics, signal processing, and market microstructure in Korean equity markets.</p>
   </div>
-  <div class="stat">
-    <div class="stat-val">−8.3%</div>
-    <div class="stat-lbl">Max Drawdown</div>
-  </div>
-  <div class="stat">
-    <div class="stat-val">24.1%</div>
-    <div class="stat-lbl">CAGR</div>
-  </div>
-  <div class="stat">
-    <div class="stat-val">4 yr</div>
-    <div class="stat-lbl">Experience</div>
+  <div class="hero-right">
+    <div>
+      <div class="hero-right-label">Performance Summary</div>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-val">1.87</div>
+          <div class="stat-lbl">Sharpe Ratio</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">−8.3%</div>
+          <div class="stat-lbl">Max Drawdown</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">24.1%</div>
+          <div class="stat-lbl">CAGR</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">4 yr</div>
+          <div class="stat-lbl">Experience</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="projects">
-  <div class="section-header"><h2>Selected Work</h2></div>
+  <div class="section-rule"><h2>Selected Work</h2></div>
+  <div class="project-grid">
 
-  <div class="project">
-    <span class="project-num">01</span>
-    <div>
+    <div class="project">
+      <div class="project-num">01</div>
       <div class="project-title">Cross-Sectional Momentum Engine</div>
       <p class="project-desc">Factor-based equity selection model combining 12-1 price momentum with earnings revision signals across KOSPI/KOSDAQ universe. Live since Q3 2024.</p>
       <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Factor Model</span><span class="tag">Backtest</span></div>
     </div>
-  </div>
 
-  <div class="project">
-    <span class="project-num">02</span>
-    <div>
+    <div class="project">
+      <div class="project-num">02</div>
       <div class="project-title">Stat-Arb Pairs Trading (KRX)</div>
       <p class="project-desc">Cointegration-based mean-reversion strategy on correlated equity pairs. Custom execution layer with adaptive entry thresholds via Kalman filter.</p>
       <div class="tags"><span class="tag">C++</span><span class="tag">Kalman Filter</span><span class="tag">Cointegration</span><span class="tag">HFT</span></div>
     </div>
-  </div>
 
-  <div class="project">
-    <span class="project-num">03</span>
-    <div>
+    <div class="project">
+      <div class="project-num">03</div>
       <div class="project-title">Options Volatility Surface Fitter</div>
       <p class="project-desc">SVI parametrisation of the implied vol surface from KOSPI200 options. Includes arbitrage-free constraints and real-time Greeks computation.</p>
       <div class="tags"><span class="tag">R</span><span class="tag">SVI</span><span class="tag">Options</span><span class="tag">Greeks</span></div>
     </div>
-  </div>
 
-  <div class="project">
-    <span class="project-num">04</span>
-    <div>
+    <div class="project">
+      <div class="project-num">04</div>
       <div class="project-title">Alternative Data Sentiment Pipeline</div>
       <p class="project-desc">NLP pipeline ingesting Korean financial news + DART filings. Generates daily sentiment scores fed into a macro factor overlay.</p>
       <div class="tags"><span class="tag">Python</span><span class="tag">NLP</span><span class="tag">BERT</span><span class="tag">Pipeline</span></div>
     </div>
+
   </div>
 </section>
 
-<section>
-  <div class="section-header"><h2>Skills</h2></div>
+<section class="skills-section">
+  <div class="section-rule"><h2>Skills</h2></div>
   <div class="skills">
     <div class="skill-group">
       <h3>Methods</h3>
@@ -219,7 +362,6 @@
     </div>
   </div>
 </section>
-
 
 </body>
 </html>

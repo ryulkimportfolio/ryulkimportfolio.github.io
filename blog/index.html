@@ -3,41 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Writing — Minseong Kim</title>
+  <title>Writing — 🌰</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 </head>
 <body>
 
-<nav class="blog-nav">
-  <a href="/" class="nav-logo">MK</a>
-  <ul>
-    <li><a href="/">Work</a></li>
-    <li><a href="/blog">Writing</a></li>
-    <li><a href="mailto:minseong@daeduck.com">Contact</a></li>
-  </ul>
+<header class="masthead">
+  <div class="masthead-title">🌰</div>
+  <div class="masthead-meta">Quant Researcher · Seoul<br>Est. 2022</div>
+</header>
+
+<nav class="site-nav">
+  <a href="/">Work</a>
+  <a href="/blog">Writing</a>
 </nav>
 
 <div class="blog-container">
-  <header class="blog-header">
+  <div class="blog-header">
     <h1>Writing</h1>
     <p>Notes on quant finance, statistics, and systematic trading.</p>
-  </header>
+  </div>
 
   <ul class="post-list">
     {% for post in site.posts %}
     <li class="post-list-item">
-      <div class="post-list-meta">
-        {{ post.date | date: "%Y-%m-%d" }}
+      <div class="post-list-date">{{ post.date | date: "%Y-%m-%d" }}</div>
+      <div>
+        <div class="post-list-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></div>
+        {% if post.excerpt %}<p class="post-list-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>{% endif %}
         {% if post.tags %}
-          &nbsp;·&nbsp;
-          {% for tag in post.tags %}<span class="tag">{{ tag }}</span> {% endfor %}
+        <div class="post-list-tags">{% for tag in post.tags %}<span class="tag">{{ tag }}</span>{% endfor %}</div>
         {% endif %}
       </div>
-      <div class="post-list-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></div>
-      {% if post.excerpt %}<p class="post-list-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>{% endif %}
     </li>
     {% endfor %}
   </ul>
