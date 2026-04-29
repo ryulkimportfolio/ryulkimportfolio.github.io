@@ -28,193 +28,101 @@
       border-top: 3px solid var(--text);
       border-bottom: 1px solid var(--border);
       padding: 16px 0 12px;
-      margin-bottom: 0;
       display: flex;
       justify-content: space-between;
       align-items: baseline;
     }
-    .masthead-title {
-      font-family: var(--serif);
-      font-size: 2.2rem;
-      font-weight: 900;
-      letter-spacing: -.02em;
-      line-height: 1;
-    }
-    .masthead-meta {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--muted);
-      letter-spacing: .04em;
-      text-align: right;
-    }
+    .masthead-title { font-family: var(--serif); font-size: 2.2rem; font-weight: 900; letter-spacing: -.02em; line-height: 1; }
+    .masthead-meta { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: .04em; text-align: right; }
 
     /* ── NAV ── */
     nav {
       border-bottom: 3px solid var(--text);
       display: flex;
-      gap: 0;
       margin-bottom: 48px;
     }
     nav a {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--text);
-      text-decoration: none;
-      padding: 8px 20px 8px 0;
-      margin-right: 20px;
-      border-right: 1px solid var(--border);
-      transition: opacity .15s;
+      font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text); text-decoration: none; padding: 8px 20px 8px 0;
+      margin-right: 20px; border-right: 1px solid var(--border); transition: opacity .15s;
     }
     nav a:last-child { border-right: none; }
     nav a:hover { opacity: .5; }
 
     /* ── HERO ── */
     .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0 48px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 48px;
-      margin-bottom: 48px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0 48px; border-bottom: 1px solid var(--border);
+      padding-bottom: 48px; margin-bottom: 48px;
     }
     .hero-left { border-right: 1px solid var(--border); padding-right: 48px; }
-    .hero-kicker {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-    .hero-headline {
-      font-family: var(--serif);
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      font-weight: 900;
-      line-height: 1.05;
-      letter-spacing: -.02em;
-      margin-bottom: 20px;
-    }
-    .hero-body {
-      font-family: var(--body);
-      font-size: 15px;
-      color: #333;
-      line-height: 1.7;
-      font-style: italic;
-    }
+    .hero-kicker { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+    .hero-headline { font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.05; letter-spacing: -.02em; margin-bottom: 20px; }
+    .hero-body { font-family: var(--body); font-size: 15px; color: #333; line-height: 1.7; font-style: italic; }
     .hero-right { display: flex; flex-direction: column; justify-content: space-between; }
-    .hero-right-label {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 8px;
-      margin-bottom: 20px;
-    }
+    .hero-right-label { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 20px; }
 
     /* ── STATS ── */
     .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 32px; }
-    .stat-val {
-      font-family: var(--serif);
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-    .stat-lbl {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
+    .stat-val { font-family: var(--serif); font-size: 2rem; font-weight: 700; line-height: 1; margin-bottom: 4px; }
+    .stat-lbl { font-family: var(--mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 
     /* ── SECTION RULE ── */
-    .section-rule {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 24px;
-      border-top: 3px solid var(--text);
-      padding-top: 10px;
-    }
-    .section-rule h2 {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
+    .section-rule { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; border-top: 3px solid var(--text); padding-top: 10px; }
+    .section-rule h2 { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; white-space: nowrap; }
     .section-rule::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+
+    /* ── CERTIFICATES ── */
+    .cert-section { margin-bottom: 56px; }
+    .cert-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; }
+    .cert {
+      padding: 20px 20px 20px 0;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .cert:nth-child(3n) { border-right: none; padding-right: 0; }
+    .cert:nth-child(3n+2), .cert:nth-child(3n+3) { padding-left: 20px; }
+    .cert:nth-last-child(-n+3) { border-bottom: none; }
+    .cert-name { font-family: var(--serif); font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+    .cert-issuer { font-family: var(--body); font-size: 13px; color: #555; margin-bottom: 4px; }
+    .cert-date { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: .04em; }
+
+    /* ── EXPERIENCE ── */
+    .exp-section { margin-bottom: 56px; }
+    .exp { display: grid; grid-template-columns: 160px 1fr; gap: 0 32px; padding: 24px 0; border-bottom: 1px solid var(--border); }
+    .exp:first-of-type { border-top: 1px solid var(--border); }
+    .exp-date { font-family: var(--mono); font-size: 11px; color: var(--muted); padding-top: 3px; line-height: 1.5; }
+    .exp-role { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; margin-bottom: 2px; }
+    .exp-company { font-family: var(--body); font-size: 13.5px; color: #555; font-style: italic; margin-bottom: 10px; }
+    .exp-desc { font-family: var(--body); font-size: 13.5px; color: #444; line-height: 1.6; }
+
+    /* ── EDUCATION ── */
+    .edu-section { margin-bottom: 56px; }
+    .edu { display: grid; grid-template-columns: 160px 1fr; gap: 0 32px; padding: 24px 0; border-bottom: 1px solid var(--border); }
+    .edu:first-of-type { border-top: 1px solid var(--border); }
+    .edu-date { font-family: var(--mono); font-size: 11px; color: var(--muted); padding-top: 3px; }
+    .edu-degree { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; margin-bottom: 2px; }
+    .edu-school { font-family: var(--body); font-size: 13.5px; color: #555; font-style: italic; margin-bottom: 6px; }
+    .edu-detail { font-family: var(--body); font-size: 13px; color: #666; }
 
     /* ── PROJECTS ── */
     .projects { margin-bottom: 56px; }
-    .project-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-    }
-    .project {
-      padding: 24px 24px 24px 0;
-      border-bottom: 1px solid var(--border);
-      border-right: 1px solid var(--border);
-    }
+    .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .project { padding: 24px 24px 24px 0; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); }
     .project:nth-child(2n) { padding: 24px 0 24px 24px; border-right: none; }
     .project:nth-last-child(-n+2) { border-bottom: none; }
-    .project-num {
-      font-family: var(--mono);
-      font-size: 10px;
-      color: var(--muted);
-      letter-spacing: .06em;
-      margin-bottom: 8px;
-    }
-    .project-title {
-      font-family: var(--serif);
-      font-size: 1.05rem;
-      font-weight: 700;
-      line-height: 1.3;
-      margin-bottom: 8px;
-    }
-    .project-desc {
-      font-family: var(--body);
-      font-size: 13.5px;
-      color: #444;
-      line-height: 1.6;
-      margin-bottom: 12px;
-    }
+    .project-num { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: .06em; margin-bottom: 8px; }
+    .project-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+    .project-desc { font-family: var(--body); font-size: 13.5px; color: #444; line-height: 1.6; margin-bottom: 12px; }
     .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .tag {
-      font-family: var(--mono);
-      font-size: 9px;
-      letter-spacing: .06em;
-      color: var(--muted);
-      border: 1px solid var(--border);
-      padding: 2px 7px;
-    }
+    .tag { font-family: var(--mono); font-size: 9px; letter-spacing: .06em; color: var(--muted); border: 1px solid var(--border); padding: 2px 7px; }
 
     /* ── SKILLS ── */
     .skills-section { margin-bottom: 56px; }
     .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
-    .skill-group h3 {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 16px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 6px;
-    }
+    .skill-group h3 { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
     .skill-item { margin-bottom: 12px; }
-    .skill-name {
-      font-family: var(--body);
-      font-size: 13px;
-      margin-bottom: 4px;
-      display: flex;
-      justify-content: space-between;
-    }
+    .skill-name { font-family: var(--body); font-size: 13px; margin-bottom: 4px; display: flex; justify-content: space-between; }
     .skill-name span { font-family: var(--mono); font-size: 11px; color: var(--muted); }
     .bar { height: 1px; background: var(--border); }
     .bar-fill { height: 100%; background: var(--text); }
@@ -222,6 +130,11 @@
     @media (max-width: 640px) {
       .hero { grid-template-columns: 1fr; }
       .hero-left { border-right: none; padding-right: 0; border-bottom: 1px solid var(--border); padding-bottom: 32px; margin-bottom: 32px; }
+      .cert-grid { grid-template-columns: 1fr; }
+      .cert, .cert:nth-child(3n) { border-right: none; padding: 20px 0; border-bottom: 1px solid var(--border); }
+      .cert:last-child { border-bottom: none; }
+      .exp, .edu { grid-template-columns: 1fr; gap: 4px; }
+      .exp-date, .edu-date { margin-bottom: 4px; }
       .project-grid { grid-template-columns: 1fr; }
       .project, .project:nth-child(2n) { padding: 24px 0; border-right: none; border-bottom: 1px solid var(--border); }
       .project:last-child { border-bottom: none; }
@@ -234,10 +147,7 @@
 
 <header class="masthead">
   <div class="masthead-title">🌰</div>
-  <div class="masthead-meta">
-    Quant Researcher · Seoul<br>
-    Est. 2022
-  </div>
+  <div class="masthead-meta">Quant Researcher · Seoul<br>Est. 2022</div>
 </header>
 
 <nav>
@@ -276,6 +186,90 @@
   </div>
 </section>
 
+<!-- ── CERTIFICATES ── -->
+<section class="cert-section">
+  <div class="section-rule"><h2>Certificates</h2></div>
+  <div class="cert-grid">
+
+    <div class="cert">
+      <div class="cert-name">CFA Level III</div>
+      <div class="cert-issuer">CFA Institute</div>
+      <div class="cert-date">Passed · 2024</div>
+    </div>
+
+    <div class="cert">
+      <div class="cert-name">FRM Part II</div>
+      <div class="cert-issuer">Global Association of Risk Professionals</div>
+      <div class="cert-date">Passed · 2023</div>
+    </div>
+
+    <div class="cert">
+      <div class="cert-name">투자자산운용사</div>
+      <div class="cert-issuer">금융투자협회</div>
+      <div class="cert-date">취득 · 2022</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── WORK EXPERIENCE ── -->
+<section class="exp-section">
+  <div class="section-rule"><h2>Work Experience</h2></div>
+
+  <div class="exp">
+    <div class="exp-date">2024 — Present</div>
+    <div>
+      <div class="exp-role">Quantitative Researcher</div>
+      <div class="exp-company">Example Asset Management · Seoul</div>
+      <div class="exp-desc">Developed and maintained systematic equity strategies across KOSPI/KOSDAQ. Built end-to-end factor research pipeline from data ingestion to live execution. Reduced strategy turnover by 18% through improved signal construction.</div>
+    </div>
+  </div>
+
+  <div class="exp">
+    <div class="exp-date">2022 — 2024</div>
+    <div>
+      <div class="exp-role">Quantitative Analyst</div>
+      <div class="exp-company">Example Securities · Seoul</div>
+      <div class="exp-desc">Supported derivatives desk with options pricing models and volatility surface calibration. Implemented real-time Greeks computation system in C++. Co-authored internal research on KOSPI200 options microstructure.</div>
+    </div>
+  </div>
+
+  <div class="exp">
+    <div class="exp-date">2021 — 2022</div>
+    <div>
+      <div class="exp-role">Research Intern</div>
+      <div class="exp-company">Example Capital · Seoul</div>
+      <div class="exp-desc">Assisted senior researchers with backtesting infrastructure and data cleaning pipelines. Built automated reporting tools for daily strategy performance monitoring.</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ── EDUCATION ── -->
+<section class="edu-section">
+  <div class="section-rule"><h2>Education</h2></div>
+
+  <div class="edu">
+    <div class="edu-date">2019 — 2021</div>
+    <div>
+      <div class="edu-degree">M.S. Financial Engineering</div>
+      <div class="edu-school">Example University · Seoul</div>
+      <div class="edu-detail">Thesis: Dynamic Hedge Ratio Estimation via Kalman Filtering in Korean Equity Pairs. GPA 4.1 / 4.5</div>
+    </div>
+  </div>
+
+  <div class="edu">
+    <div class="edu-date">2015 — 2019</div>
+    <div>
+      <div class="edu-degree">B.S. Mathematics & Economics</div>
+      <div class="edu-school">Example University · Seoul</div>
+      <div class="edu-detail">Graduated Summa Cum Laude. Minor in Computer Science.</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ── SELECTED WORK ── -->
 <section class="projects">
   <div class="section-rule"><h2>Selected Work</h2></div>
   <div class="project-grid">
@@ -311,6 +305,7 @@
   </div>
 </section>
 
+<!-- ── SKILLS ── -->
 <section class="skills-section">
   <div class="section-rule"><h2>Skills</h2></div>
   <div class="skills">
