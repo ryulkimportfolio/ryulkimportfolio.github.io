@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} — Minseong Kim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+  {% if page.math %}
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  {% endif %}
+</head>
+<body class="post-body">
+
+<nav class="post-nav">
+  <a href="/" class="nav-logo">MK</a>
+  <ul>
+    <li><a href="/">Work</a></li>
+    <li><a href="/blog">Writing</a></li>
+    <li><a href="mailto:minseong@daeduck.com">Contact</a></li>
+  </ul>
+</nav>
+
+<article class="post-container">
+  <header class="post-header">
+    <div class="post-meta-top">
+      <span class="post-date">{{ page.date | date: "%Y-%m-%d" }}</span>
+      {% if page.tags %}
+      <span class="post-tags">
+        {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+      </span>
+      {% endif %}
+    </div>
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.excerpt %}<p class="post-excerpt">{{ page.excerpt }}</p>{% endif %}
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer">
+    <a href="/blog" class="back-link">← All articles</a>
+  </footer>
+</article>
+
+</body>
+</html>

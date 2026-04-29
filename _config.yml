@@ -1,0 +1,28 @@
+title: "Minseong Kim"
+description: "Quant Researcher · Seoul"
+baseurl: ""
+url: "https://ryulkimportfolio.github.io"
+
+author:
+  name: "Ryul Kim"
+  email: "ryulkim@icloud.com"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  math_engine: null
+
+permalink: /blog/:slug
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
